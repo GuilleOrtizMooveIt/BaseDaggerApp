@@ -1,8 +1,7 @@
-package com.example.basedaggerapp
+package com.example.basedaggerapp.di
 
 import android.content.Context
-import com.example.basedaggerapp.di.*
-import com.example.basedaggerapp.ui.main.MainFragment
+import com.example.basedaggerapp.ExampleUnitTest
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule

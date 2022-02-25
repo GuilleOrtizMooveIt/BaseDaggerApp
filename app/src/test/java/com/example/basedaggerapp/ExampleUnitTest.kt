@@ -1,7 +1,10 @@
 package com.example.basedaggerapp
 
 import android.os.Build
+import com.example.basedaggerapp.di.DaggerTestAppComponent
 import com.example.basedaggerapp.di.MyApp
+import com.example.basedaggerapp.di.TestAppComponent
+import com.example.basedaggerapp.di.TestMyApp
 import com.example.basedaggerapp.repository.FakeLoginRepository
 import com.example.basedaggerapp.repository.RealRepository
 import org.junit.Test

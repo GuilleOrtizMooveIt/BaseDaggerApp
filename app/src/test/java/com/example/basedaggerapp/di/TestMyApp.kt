@@ -1,9 +1,6 @@
-package com.example.basedaggerapp
+package com.example.basedaggerapp.di
 
-import com.example.basedaggerapp.di.AppComponent
-import com.example.basedaggerapp.di.MyApp
-
- class TestMyApp: MyApp() {
+class TestMyApp: MyApp() {
   override fun initializeDaggerComponent(): AppComponent {
     val component: TestAppComponent = DaggerTestAppComponent.factory()
       .create(this)
