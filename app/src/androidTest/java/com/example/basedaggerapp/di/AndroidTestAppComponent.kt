@@ -1,8 +1,9 @@
 package com.example.basedaggerapp.di
 
 import android.content.Context
-import com.example.basedaggerapp.domain.LoginUseCaseTest
-import com.example.basedaggerapp.repository.LoginRepositoryTest
+import com.example.basedaggerapp.AndroidTestMyApp
+import com.example.basedaggerapp.ExampleInstrumentedTest
+import com.example.basedaggerapp.shared.di.MockLoginModule
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule
@@ -15,14 +16,13 @@ import dagger.android.AndroidInjectionModule
 //    LoginModule::class]
     MockLoginModule::class]
 )
-interface TestAppComponent: AppComponent {
+interface AndroidTestAppComponent: AppComponent {
 
   @Component.Factory
   interface Factory {
-    fun create(@BindsInstance context: Context): TestAppComponent
+    fun create(@BindsInstance context: Context): AndroidTestAppComponent
   }
 
-  fun inject(app: TestMyApp)
-  fun inject(test: LoginRepositoryTest)
-  fun inject(test: LoginUseCaseTest)
+  fun inject(app: AndroidTestMyApp)
+  fun inject(test: ExampleInstrumentedTest)
 }

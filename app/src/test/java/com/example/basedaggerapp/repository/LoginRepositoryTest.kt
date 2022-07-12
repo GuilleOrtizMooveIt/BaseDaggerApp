@@ -1,15 +1,14 @@
 package com.example.basedaggerapp.repository
 
+import com.example.basedaggerapp.LocalTestMyApp
 import com.example.basedaggerapp.LoginRepository
-import com.example.basedaggerapp.di.DaggerTestAppComponent
-import com.example.basedaggerapp.di.TestAppComponent
-import com.example.basedaggerapp.di.TestMyApp
-import com.example.basedaggerapp.repository.RealRepository.Companion.PASSWORD
-import com.example.basedaggerapp.repository.RealRepository.Companion.USER
+import com.example.basedaggerapp.di.DaggerLocalTestAppComponent
+import com.example.basedaggerapp.shared.repository.RealRepository
+import com.example.basedaggerapp.shared.repository.RealRepository.Companion.PASSWORD
+import com.example.basedaggerapp.shared.repository.RealRepository.Companion.USER
+import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
-
-import org.junit.Assert.*
 import javax.inject.Inject
 
 class LoginRepositoryTest {
@@ -22,7 +21,7 @@ class LoginRepositoryTest {
 
   @Before
   fun setup() {
-    val component: TestAppComponent = DaggerTestAppComponent.factory().create(TestMyApp())
+    val component = DaggerLocalTestAppComponent.factory().create(LocalTestMyApp())
     component.inject(this)
   }
 

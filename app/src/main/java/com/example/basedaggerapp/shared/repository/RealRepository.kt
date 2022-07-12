@@ -1,4 +1,4 @@
-package com.example.basedaggerapp.repository
+package com.example.basedaggerapp.shared.repository
 
 import com.example.basedaggerapp.LoginRepository
 import javax.inject.Inject
