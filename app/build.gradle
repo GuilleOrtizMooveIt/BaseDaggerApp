@@ -1,4 +1,3 @@
-
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
@@ -17,8 +16,8 @@ android {
         versionCode 1
         versionName "1.0"
 
-//        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        testInstrumentationRunner "com.example.basedaggerap.CustomTestRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        //testInstrumentationRunner "com.example.basedaggerap.CustomTestRunner"
     }
 
     buildTypes {
@@ -33,6 +32,18 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+    sourceSets {
+        main.java.srcDirs += 'src/main/java'
+        test.java.srcDirs += 'src/test/java'
+        androidTest.java.srcDirs += 'src/androidTest/java'
+        String sharedTestDir = 'src/sharedTest/java'
+        androidTest {
+            java.srcDir sharedTestDir
+        }
+        test {
+            java.srcDir sharedTestDir
+        }
     }
 }
 

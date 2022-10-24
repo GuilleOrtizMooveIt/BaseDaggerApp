@@ -1,7 +1,7 @@
 package com.example.basedaggerapp.di
 
 import com.example.basedaggerapp.LoginRepository
-import com.example.basedaggerapp.repository.RealRepository
+import com.example.basedaggerapp.shared.repository.RealRepository
 import dagger.Binds
 import dagger.Module
 

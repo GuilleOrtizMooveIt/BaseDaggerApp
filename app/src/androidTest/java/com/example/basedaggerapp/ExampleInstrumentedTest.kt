@@ -1,12 +1,12 @@
 package com.example.basedaggerapp
 
-import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
-
+import androidx.test.platform.app.InstrumentationRegistry
+import com.example.basedaggerapp.di.DaggerAndroidTestAppComponent
+import org.junit.Assert.assertEquals
+import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
-
-import org.junit.Assert.*
 
 /**
  * Instrumented test, which will execute on an Android device.
@@ -16,6 +16,13 @@ import org.junit.Assert.*
 
 @RunWith(AndroidJUnit4::class)
 class ExampleInstrumentedTest {
+
+  @Before
+  fun setUp() {
+    val component = DaggerAndroidTestAppComponent.factory().create(AndroidTestMyApp())
+    component.inject(this)
+  }
+
   @Test
   fun useAppContext() {
     // Context of the app under test.
